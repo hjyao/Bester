@@ -12,4 +12,14 @@ public class Rectangle {
     public double area() {
         return length * breadth;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Rectangle rectangle = (Rectangle) o;
+
+        return Double.compare(rectangle.area(), area()) == 0;
+    }
 }
