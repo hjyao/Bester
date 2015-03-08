@@ -5,9 +5,14 @@ package bester;
  */
 public class Bester {
     public Rectangle bestFrom(Rectangle... rectangles) {
+        if(rectangles == null || rectangles.length == 0){
+            throw new IllegalArgumentException();
+        }
         Rectangle best = rectangles[0];
         for (Rectangle challenger : rectangles){
-            best = challenger.betterThan(best);
+            if(challenger != null){
+                best = challenger.betterThan(best);
+            }
         }
         return best;
     }
