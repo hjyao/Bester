@@ -1,6 +1,6 @@
 package bester;
 
-public class Rectangle {
+public class Rectangle implements Bestable {
     private double length;
     private double breadth;
 
@@ -23,10 +23,11 @@ public class Rectangle {
         return Double.compare(rectangle.area(), area()) == 0;
     }
 
-    public Rectangle betterThan(Rectangle rectangle) {
-        if(area() > rectangle.area()){
+    @Override
+    public Bestable betterThan(Bestable bestable) {
+        if(area() > ((Rectangle) bestable).area()){
             return this;
         }
-        return rectangle;
+        return bestable;
     }
 }
