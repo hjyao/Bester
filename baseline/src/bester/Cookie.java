@@ -1,6 +1,6 @@
 package bester;
 
-public class Cookie {
+public class Cookie implements Bestable {
 
     private int numberOfChocolateChips;
 
@@ -19,4 +19,11 @@ public class Cookie {
 
     }
 
+    @Override
+    public Bestable betterThan(Bestable challenger) {
+        if(numberOfChocolateChips > ((Cookie)challenger).numberOfChocolateChips){
+            return this;
+        }
+        return challenger;
+    }
 }
