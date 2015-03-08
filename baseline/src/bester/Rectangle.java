@@ -22,4 +22,11 @@ public class Rectangle {
 
         return Double.compare(rectangle.area(), area()) == 0;
     }
+
+    public Rectangle betterThan(Rectangle rectangle) {
+        if(area() > rectangle.area()){
+            return this;
+        }
+        return rectangle;
+    }
 }
